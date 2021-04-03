@@ -117,6 +117,7 @@ def display_tasks_arrival(dwg, LIST_FUNC, Pi, FirstArrival):
 
     hauteur_line = 65
     hyper_periode = ppcm(*Pi) 
+    new_FirstArrival = FirstArrival[:]
 
 
 
@@ -131,9 +132,9 @@ def display_tasks_arrival(dwg, LIST_FUNC, Pi, FirstArrival):
 
         for times in range(hyper_periode+1):
 
-            if times == FirstArrival[count]:
+            if times == new_FirstArrival[count]:
         		
-                FirstArrival[count] = FirstArrival[count] + Pi[count]
+                new_FirstArrival[count] = new_FirstArrival[count] + Pi[count]
 
                 ##display arrow
                 dwg.add(dwg.line((x_start_line, hauteur_line), (x_start_line, hauteur_line-25), stroke='green'))
@@ -146,13 +147,55 @@ def display_tasks_arrival(dwg, LIST_FUNC, Pi, FirstArrival):
 
 
 
+        hauteur_line = hauteur_line + 100
+
+    print(FirstArrival[0])
+
+
+def display_tasks_deadlines(dwg, LIST_FUNC, Pi, FirstArrival, Di):
+
+    hauteur_line = 65
+    hyper_periode = ppcm(*Pi) 
+    new_FirstArrival = FirstArrival[:]
+    new_Di = Di[:]
+
+
+
+
+
+    for count, fun in enumerate(LIST_FUNC):
+
+        x_start_line = 100
+
+        new_Di[count] = new_FirstArrival[count] + Di[count]
+
+
+
+
+        for times in range(hyper_periode+1):
+
+
+
+            if times == new_Di[count]:
+
+                new_Di[count] = new_FirstArrival[count] + Di[count]
+
+                ##display arrow
+                dwg.add(dwg.line((x_start_line, hauteur_line), (x_start_line, hauteur_line-25), stroke='green'))
+                dwg.add(dwg.line((x_start_line, hauteur_line), (x_start_line+3, hauteur_line-5), stroke='green'))
+                dwg.add(dwg.line((x_start_line, hauteur_line), (x_start_line-3, hauteur_line-5), stroke='green'))
+
+            if times == new_FirstArrival[count]:
+        		
+                new_FirstArrival[count] = new_FirstArrival[count] + Pi[count]
+
+
+            #line
+            x_start_line = x_start_line + 20
 
 
 
         hauteur_line = hauteur_line + 100
-
-
-
 
 
 
