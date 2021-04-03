@@ -149,8 +149,6 @@ def display_tasks_arrival(dwg, LIST_FUNC, Pi, FirstArrival):
 
         hauteur_line = hauteur_line + 100
 
-    print(FirstArrival[0])
-
 
 def display_tasks_deadlines(dwg, LIST_FUNC, Pi, FirstArrival, Di):
 
