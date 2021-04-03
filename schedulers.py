@@ -35,9 +35,6 @@ def rateMonotonic(dwg, LIST_FUNC, Pi, FirstArrival, Ci):
         square = 0
 
 
-
-
-
         for count, fun in enumerate(LIST_FUNC):
 
             if new_FirstArrival[count] == times:
@@ -45,6 +42,7 @@ def rateMonotonic(dwg, LIST_FUNC, Pi, FirstArrival, Ci):
                 new_Ci[count] = Ci[count]
                 new_FirstArrival[count] = new_FirstArrival[count] + Pi[count]
 
+        for count, fun in enumerate(LIST_FUNC):
 
             y_start_rect = 45
 
@@ -78,30 +76,3 @@ def rateMonotonic(dwg, LIST_FUNC, Pi, FirstArrival, Ci):
 
 
 
-    """
-    for count, fun in enumerate(LIST_FUNC):
-
-
-
-
-
-
-        for times in range(hyper_periode+1):
-
-            if times == new_FirstArrival[count]:
-                
-                new_FirstArrival[count] = new_FirstArrival[count] + Pi[count]
-
-                ##display arrow
-                dwg.add(dwg.line((x_start_line, hauteur_line), (x_start_line, hauteur_line-25), stroke='green'))
-                dwg.add(dwg.line((x_start_line, hauteur_line-25), (x_start_line+3, hauteur_line-20), stroke='green'))
-                dwg.add(dwg.line((x_start_line, hauteur_line-25), (x_start_line-3, hauteur_line-20), stroke='green'))
-
-
-            #line
-            x_start_line = x_start_line + 20
-
-
-
-        hauteur_line = hauteur_line + 100
-        """

@@ -5,8 +5,8 @@ from schedulers import rateMonotonic, shorterPeriod
 
 LIST_FUNC = ["navigation" , "Detection_contact" , "Detection_distance"]
 FirstArrival = [0, 0, 0]
-Pi = [20, 5, 15]
-Di = [12, 5, 7]
+Pi = [20, 5, 10]
+Di = [20, 5, 10]
 Ci = [3, 2, 2]
 
 
