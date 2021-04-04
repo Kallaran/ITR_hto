@@ -6,9 +6,9 @@ Jean Derieux - Alexys Guerin
 
 Il faut installer svgwrite : pip3 install svgwrite
 
-script.py permet d'avoir les WCET de nos fonctions de detection/navigation.
+python3 script.py : permet d'avoir les WCET de nos fonctions de detection/navigation.
 
-main.py permet d'obtenir une illustration d'ordonnanceur Rate Monotonic ou Early Deadline First (Choix en commentant/décommentant dans le code). 
+python3 main.py : permet d'obtenir une illustration d'ordonnanceur Rate Monotonic ou Early Deadline First (Choix en commentant/décommentant dans le code : lignes 36/37 fichier main.py). 
 
 ## Heptane 
 
@@ -40,6 +40,9 @@ Ci = [3,3,3]
 Pi = [20,10,30]
 
 On obtient au final un même schéma pour RM et EDF.
+
+Et dans cette configuration toutes les deadlines sont respectées.
+(Dans le cas contraire un message est print dans le terminal pour spécifier à quel(s) instant(s) les échéances ont été dépassées.)
 
 ![](https://i.imgur.com/7toG0PV.png)
 
